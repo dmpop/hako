@@ -1,10 +1,11 @@
 <?php
-// javascript:var%20title=window.getSelection();location.href='http://127.0.0.1:8000/index.php?url='+encodeURIComponent(location.href)+'&title='+escape(title)
+// javascript:var%20title=window.getSelection();location.href='http://127.0.0.1:8000/index.php?url='+encodeURIComponent(location.href)+'&title='+'&key=secret'
+$KEY="secret";
 error_reporting(E_ERROR);
 if (!file_exists('archive')) {
     mkdir('archive', 0777, true);
 }
-if (!empty($_GET['title'])) {
+if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
     $filename = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_GET['title']);
     $filename = mb_ereg_replace("([\.]{2,})", '', $filename);
     $filename = str_replace(" ", "_", $filename);
