@@ -8,7 +8,10 @@ if (!empty($_GET['title'])) {
     $filename = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_GET['title']);
     $filename = mb_ereg_replace("([\.]{2,})", '', $filename);
     $filename = str_replace(" ", "_", $filename);
-    shell_exec('monolith ' . $_GET['url'] . ' --isolate --output archive/' . $filename . '.html');
+    //shell_exec('monolith ' . $_GET['url'] . ' --isolate --output archive/' . $filename . '.html');
+    $f = fopen("archive/" . $filename . ".txt", "w");
+    fwrite($f, $_GET['url'] . "\n");
+    fclose($f);
 }
 ?>
 
@@ -33,7 +36,7 @@ if (!empty($_GET['title'])) {
         <div class="uk-card uk-card-default uk-card-body">
             <h1 class="uk-heading-line uk-text-center"><span>Hako</span></h1>
             <?php
-            $fileList = glob('archive/*');
+            $fileList = glob('archive/*.html');
             //Loop through the array that glob returned.
             foreach ($fileList as $filename) {
                 //Simply print them out onto the screen.
