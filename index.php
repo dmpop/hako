@@ -1,6 +1,6 @@
 <?php
 // javascript:var%20title=window.getSelection();location.href='http://127.0.0.1:8000/index.php?url='+encodeURIComponent(location.href)+'&title='+'&key=secret'
-$KEY="secret";
+$KEY = "secret";
 error_reporting(E_ERROR);
 if (!file_exists('archive')) {
     mkdir('archive', 0777, true);
@@ -38,10 +38,13 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
             <h1 class="uk-heading-line uk-text-center"><span>Hako</span></h1>
             <?php
             $fileList = glob('archive/*.html');
-            //Loop through the array that glob returned.
             foreach ($fileList as $filename) {
-                //Simply print them out onto the screen.
-                echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a><br>";
+                $url = file_get_contents('archive/' . basename($filename, ".html") . '.txt', true);
+                if (!empty($url)) {
+                    echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a> (<a href='$url'>original link</a>)<br>";
+                } else {
+                    echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a><br>";
+                }
             }
             ?>
             <hr style="margin-bottom: 1em;">
