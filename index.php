@@ -28,33 +28,27 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
     <meta charset="utf-8">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗃️</text></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="water.css" />
 </head>
 
 <body>
-    <div class="uk-container uk-margin-small-top">
-        <div class="uk-card uk-card-default uk-card-body">
-            <h1 class="uk-heading-line uk-text-center"><span>箱 Hako</span></h1>
-            <?php
-            $fileList = glob('archive/*.html');
-            foreach ($fileList as $filename) {
-                //$url = file_get_contents('archive/' . basename($filename, ".html") . '.txt', true);
-                $array = explode("\n", file_get_contents('archive/' . basename($filename, ".html") . '.txt', true));
-                $title = $array[0];
-                $url = $array[1];
-                if (!empty($url)) {
-                    echo "<a href='$filename'>" . $title . "</a> <strong><a href='$url'><img src='external-link.svg' /></a></strong><a href='read.php?url=$url'><img src='file-text.svg' /></a></strong><br>";
-                } else {
-                    echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a><br>";
-                }
-            }
-            ?>
-            <hr style="margin-bottom: 1em;">
-            &copy; <?php echo date("Y"); ?>. This is <a href="https://github.com/dmpop/hako">Hako</a>
-        </div>
-    </div>
+    <h1 style="display: inline; height: 2em; margin-left: 0.3em; letter-spacing: 3px; color: rgb(200, 113, 55);">箱 Hako</h1>
+    <hr>
+    <?php
+    $fileList = glob('archive/*.html');
+    foreach ($fileList as $filename) {
+        $array = explode("\n", file_get_contents('archive/' . basename($filename, ".html") . '.txt', true));
+        $title = $array[0];
+        $url = $array[1];
+        if (!empty($url)) {
+            echo "<a href='$filename'>" . $title . "</a> <strong><a href='$url'><img src='external-link.svg' /></a></strong><a href='read.php?url=$url'><img src='file-text.svg' /></a></strong><br>";
+        } else {
+            echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a><br>";
+        }
+    }
+    ?>
+    <hr style="margin-bottom: 1em;">
+    &copy; <?php echo date("Y"); ?>. This is <a href="https://github.com/dmpop/hako">Hako</a>
 </body>
 
 </html>

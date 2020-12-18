@@ -6,14 +6,10 @@
     <meta charset="utf-8">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗃️</text></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="water.css" />
 </head>
 
 <body>
-    <div class="uk-container uk-margin-small-top">
-        <div class="uk-card uk-card-default uk-card-body">
             <?php
             require_once 'Readability.php';
             $url = $_GET['url'];
@@ -59,9 +55,7 @@
                 echo "Something went wrong. :-(";
             }
             ?>
-            <a class="uk-button uk-button-default uk-margin-top" href="index.php">Back</a>
-        </div>
-    </div>
+            <a href="index.php">Back</a>
 </body>
 
 </html>

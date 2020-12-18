@@ -1,6 +1,8 @@
 # Hako
 
-Stupidly simple web page archiving tool.
+Stupidly simple self-hosted web page archiving tool written in PHP.
+
+<img src="hako.png" alt="Hako">
 
 ## Dependencies
 
