@@ -6,6 +6,7 @@ Stupidly simple web page archiving tool.
 
 - [monolith](https://github.com/Y2Z/monolith)
 - PHP
+- PHP-XML
 - Git (optional)
 
 ## Installation and Usage

@@ -24,7 +24,7 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
 
 <head>
     <meta charset="utf-8">
-    <title>Hako</title>
+    <title>箱</title>
     <meta charset="utf-8">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗃️</text></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +36,7 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
 <body>
     <div class="uk-container uk-margin-small-top">
         <div class="uk-card uk-card-default uk-card-body">
-            <h1 class="uk-heading-line uk-text-center"><span>Hako</span></h1>
+            <h1 class="uk-heading-line uk-text-center"><span>箱 Hako</span></h1>
             <?php
             $fileList = glob('archive/*.html');
             foreach ($fileList as $filename) {
@@ -45,7 +45,7 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
                 $title = $array[0];
                 $url = $array[1];
                 if (!empty($url)) {
-                    echo "<a href='$filename'>" . $title . "</a> <strong><a href='$url'><img src='globe.svg' /></a></strong><br>";
+                    echo "<a href='$filename'>" . $title . "</a> <strong><a href='$url'><img src='external-link.svg' /></a></strong><a href='read.php?url=$url'><img src='file-text.svg' /></a></strong><br>";
                 } else {
                     echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a><br>";
                 }
