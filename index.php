@@ -9,8 +9,9 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
     $filename = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_GET['title']);
     $filename = mb_ereg_replace("([\.]{2,})", '', $filename);
     $filename = str_replace(" ", "_", $filename);
-    //shell_exec('monolith ' . $_GET['url'] . ' --isolate --output archive/' . $filename . '.html');
-    $f = fopen("archive/" . $filename . ".txt", "w");
+    shell_exec('monolith ' . $_GET['url'] . ' --isolate --output archive/' . $filename . '.html');
+    $f = fopen("archive/" . $filename . ".txt", "a");
+    fwrite($f, $_GET['title'] . "\n");
     fwrite($f, $_GET['url'] . "\n");
     fclose($f);
 }
@@ -39,9 +40,12 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
             <?php
             $fileList = glob('archive/*.html');
             foreach ($fileList as $filename) {
-                $url = file_get_contents('archive/' . basename($filename, ".html") . '.txt', true);
+                //$url = file_get_contents('archive/' . basename($filename, ".html") . '.txt', true);
+                $array = explode("\n", file_get_contents('archive/' . basename($filename, ".html") . '.txt', true));
+                $title = $array[0];
+                $url = $array[1];
                 if (!empty($url)) {
-                    echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a> (<a href='$url'>original link</a>)<br>";
+                    echo "<a href='$filename'>" . $title . "</a> <strong><a href='$url'><img src='globe.svg' /></a></strong><br>";
                 } else {
                     echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a><br>";
                 }
