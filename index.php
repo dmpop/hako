@@ -9,7 +9,7 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
     $filename = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_GET['title']);
     $filename = mb_ereg_replace("([\.]{2,})", '', $filename);
     $filename = str_replace(" ", "_", $filename);
-    shell_exec('monolith ' . $_GET['url'] . ' --isolate --output archive/' . $filename . '.html');
+    shell_exec('./monolith ' . $_GET['url'] . ' --isolate --output archive/' . $filename . '.html');
     $f = fopen("archive/" . $filename . ".txt", "a");
     fwrite($f, $_GET['title'] . "\n");
     fwrite($f, $_GET['url'] . "\n");
