@@ -32,8 +32,8 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
 </head>
 
 <body>
-    <img style="display: inline; height: 1.6em;" src="favicon.png" alt="logo" />
-    <h1 style="display: inline; height: 2em; margin-left: 0.1em; letter-spacing: 3px; color: rgb(125, 202, 210);">箱</h1>
+    <img style="display: inline; height: 1.55em;" src="favicon.png" alt="logo" />
+    <h1 style="display: inline; height: 2em; margin-left: 0.3em; letter-spacing: 3px; color: rgb(125, 202, 210);">HAKO</h1>
     <hr>
     <?php
     $fileList = glob('archive/*.html');
@@ -42,7 +42,7 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
         $title = $array[0];
         $url = $array[1];
         if (!empty($url)) {
-            echo "<a href='$filename'>" . $title . "</a> <strong><a href='$url'><img src='external-link.svg' /></a></strong><a href='read.php?url=$url'><img src='file-text.svg' /></a></strong><br>";
+            echo "<a href='$filename'>" . $title . "</a> <strong><a style='margin-left: 0.5em; margin-right: 0.5em;' href='$url'><img src='external-link.svg' /></a></strong><a href='read.php?url=$url'><img src='file-text.svg' /></a></strong><br>";
         } else {
             echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a><br>";
         }
