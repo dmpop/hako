@@ -32,8 +32,8 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
 </head>
 
 <body>
-    <img style="display: inline; height: 1.55em;" src="favicon.png" alt="logo" />
-    <h1 style="display: inline; height: 2em; margin-left: 0.3em; letter-spacing: 3px; color: rgb(125, 202, 210);">HAKO</h1>
+    <img style="display: inline; height: 1.60em;" src="favicon.png" alt="logo" />
+    <h1 style="display: inline; height: 2em; margin-left: 0.2em; letter-spacing: 3px; color: rgb(125, 202, 210);">HAKO</h1>
     <hr>
     <?php
     $fileList = glob('archive/*.html');

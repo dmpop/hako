@@ -13,7 +13,7 @@ Stupidly simple self-hosted web page archiving tool written in PHP.
 
 ## Installation and Usage
 
-Read the [Hako: Stupidly simple DIY web archiving tool](https://tokyoma.de/articles/hako.php) article.
+Read the [Hako: Stupidly simple DIY web archiving tool](https://tokyoma.de/articles/hako.html) article.
 
 ## Problems?
 
