@@ -29,7 +29,7 @@ error_reporting(E_ERROR);
         <label for="password">Secret key:</label>
         <input type='password' name='key' value=''>
         <button type="submit" name="add">Add</button>
-        <button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'>back</button>
+        <button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'>Back</button>
     </form>
     </div>
     </div>
