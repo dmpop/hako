@@ -28,12 +28,14 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
     <meta charset="utf-8">
     <link rel="icon" href="favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="water.css" />
+    <link rel="stylesheet" href="classless.css" />
 </head>
 
 <body>
-    <img style="display: inline; height: 1.60em;" src="favicon.png" alt="logo" />
-    <h1 style="display: inline; height: 2em; margin-left: 0.2em; letter-spacing: 3px; color: rgb(125, 202, 210);">HAKO</h1>
+    <div class="text-center">
+        <img style="display: inline; height: 2.5em;" src="favicon.png" alt="logo" />
+        <h1 style="display: inline; margin-left: 0.2em; letter-spacing: 3px; color: rgb(125, 202, 210);">HAKO</h1>
+    </div>
     <hr>
     <?php
     $fileList = glob('archive/*.html');
@@ -42,14 +44,16 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
         $title = $array[0];
         $url = $array[1];
         if (!empty($url)) {
-            echo "<a href='$filename'>" . $title . "</a> <strong><a style='margin-left: 0.5em; margin-right: 0.5em;' href='$url'><img src='external-link.svg' /></a></strong><a href='read.php?url=$url'><img src='file-text.svg' /></a></strong><br>";
+            echo "<p><a href='$filename'>" . $title . "</a> <strong><a style='margin-left: 0.5em; margin-right: 0.5em;' href='$url'><img src='external-link.svg' /></a></strong><a href='read.php?url=$url'><img src='file-text.svg' /></a></strong></p>";
         } else {
-            echo "<a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a><br>";
+            echo "<p><a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a></p>";
         }
     }
     ?>
     <hr style="margin-bottom: 1em;">
-    &copy; <?php echo date("Y"); ?>. This is <a href="https://github.com/dmpop/hako">Hako</a>
+    <div class="text-center">
+        &copy; <?php echo date("Y"); ?>. This is <a href="https://github.com/dmpop/hako">Hako</a>
+    </div>
 </body>
 
 </html>
