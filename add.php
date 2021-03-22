@@ -17,9 +17,9 @@ error_reporting(E_ERROR);
 
 <body>
     <div class="text-center">
-        <img style="display: inline; height: 3em;" src="favicon.png" alt="logo" />
-        <h1 style="margin-left: 0.2em; margin-top: 0em; letter-spacing: 3px; color: rgb(125, 202, 210);">HAKO</h1>
-        <hr style="margin-bottom: 2em;">
+        <img style="vertical-align: text-bottom; height: 3em;" src="favicon.svg" alt="logo" />
+        <h1 style="display: inline; margin-left: 0.2em; margin-top: 0em; letter-spacing: 3px; color: rgb(125, 202, 210);">HAKO</h1>
+        <hr style="margin-top: 2em; margin-bottom: 2em;">
     </div>
     <form action="index.php" method="GET">
         <label for="url">URL:</label>

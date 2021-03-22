@@ -33,11 +33,10 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
 
 <body>
     <div class="text-center">
-        <img style="display: inline; height: 3em;" src="favicon.png" alt="logo" />
-        <h1 style="margin-left: 0.2em; margin-top: 0em; letter-spacing: 3px; color: rgb(125, 202, 210);">HAKO</h1>
-        <button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "add.php"'>Add</button>
+        <img style="vertical-align: text-bottom; height: 3em;" src="favicon.svg" alt="logo" />
+        <h1 style="display: inline; margin-left: 0.2em; margin-top: 0em; letter-spacing: 3px; color: rgb(125, 202, 210);">HAKO</h1>
+        <hr style="margin-top: 2em; margin-bottom: 2em;">
     </div>
-    <hr>
     <?php
     $fileList = glob('archive/*.html');
     foreach ($fileList as $filename) {
@@ -53,6 +52,7 @@ if (!empty($_GET['title']) and $_GET['key'] == $KEY) {
     ?>
     <hr style="margin-bottom: 1em;">
     <div class="text-center">
+        <p><button style="margin-bottom: 1.5em;" onclick='window.location.href = "add.php"'>Add</button></p>
         &copy; <?php echo date("Y"); ?>. This is <a href="https://github.com/dmpop/hako">Hako</a>
     </div>
 </body>
