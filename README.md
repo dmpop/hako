@@ -2,36 +2,35 @@
 
 Stupidly simple self-hosted web page archiving tool written in PHP.
 
-<img src="hako.png" alt="Hako">
-
 ## Features
 
 - Archive web pages instantly using a bookmarklet
 - Readability functionality
-- Basic protection via a secret key
+- Basic password protection
 
 ## Dependencies
 
 - [Monolith](https://github.com/Y2Z/monolith)
 - PHP
-- PHP-XML
+- php-xml
+- php-mbstring
 - Git (optional)
 
 Hako is designed to work out of the box on Linux. With a bit of tweaking, it's possible to make it run on Windows and macOS.
 
 ## Installation and usage
 
-Install PHP as well as the _php-xml_ and _php-mbstring_ packages on your system. Clone then the project's Git repository using the `git clone https://github.com/dmpop/hako.git` command. Switch to the resulting _hako_ directory, open the _index.php_ file for editing, and replace the default value of the `$KEY` variable with the desired secret key. Save the changes and start the PHP server using the `php -S 0.0.0.0:3000` command.
+Install PHP as well as the _php-xml_ and _php-mbstring_ packages on your system. Clone then the project's Git repository using the `git clone https://github.com/dmpop/hako.git` command. Switch to the resulting _hako_ directory, open the _index.php_ file for editing, and replace the default value of the `$password` variable with the desired password. Save the changes and start the PHP server using the `php -S 0.0.0.0:3000` command.
 
-Instead of using the **Add** button and specifying the URL and title of the web page you want to archive, you can add the following bookmarklet to the bookmark toolbar of your browser (replace _127.0.0.1_ with the actual IP address of the machine running Hako and _secret_ with the string that matches the value of the `$KEY` variable):
+Instead of using the **Add** button and specifying the URL and title of the web page you want to archive, you can add the following bookmarklet to the bookmark toolbar of your browser (replace _127.0.0.1_ with the actual IP address of the machine running Hako and _password_ with the string that matches the value of the `$password` variable):
 
-    javascript:var%20title=window.getSelection();location.href='http://127.0.0.1:8000/index.php?url='+encodeURIComponent(location.href)+'&title='+'&key=secret
+    javascript:var%20title=window.getSelection();location.href='http://127.0.0.1:8000/index.php?url='+encodeURIComponent(location.href)+'&title='+'&password=secret
 
 You can navigate to the page you want to archive, select the title, and click on the Hako bookmarklet. If the page has been archived successfully, you should see it in the list of saved pages.
 
 If everything works properly, you might want to create a system service to start Hako automatically. Run the `sudo nano /etc/systemd/system/hako.service` command and add the following definition (replace _/path/to/hako_ with the actual path to the _hako_ directory):
 
-```
+```conf
 [Unit]
 Description=Hako
 Wants=syslog.service
@@ -47,7 +46,7 @@ WantedBy=multi-user.target
 
 Enable and start the service:
 
-```
+```bash
 sudo systemctl enable hako.service
 sudo systemctl start hako.service
 ```
