@@ -3,7 +3,7 @@ error_reporting(E_ERROR);
 // javascript:var%20title=window.getSelection();location.href='http://127.0.0.1:8000/index.php?url='+encodeURIComponent(location.href)+'&title='+'&password=password'
 $theme = "light";
 $title = "Hako";
-$footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
+$footer = "Read the <a href='https://dmpop.gumroad.com/l/php-right-away'>PHP Right Away</a> book";
 $password = "password";
 if (!file_exists('archive')) {
     mkdir('archive', 0777, true);
