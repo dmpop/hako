@@ -6,7 +6,7 @@ $title = "Hako";
 $footer = "Read the <a href='https://dmpop.gumroad.com/l/php-right-away'>PHP Right Away</a> book";
 $password = "password";
 if (!file_exists('archive')) {
-    mkdir('archive', 0777, true);
+    mkdir('archive', 0755, true);
 }
 if (!empty($_GET['title']) and $_GET['password'] == $password) {
     $filename = preg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_GET['title']);
