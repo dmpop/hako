@@ -1,6 +1,7 @@
 <?php
-error_reporting(E_ERROR);
+//error_reporting(E_ERROR);
 include('config.php');
+$file = $_GET['file'];
 ?>
 
 <!DOCTYPE html>
@@ -22,23 +23,26 @@ include('config.php');
         <div class="text-center" style="margin-top: 1em; margin-bottom: 1em;">
             <img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
             <h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
+            <hr style="margin-bottom: 2em;">
+            <form action=" " method="POST">
+                <label for="password">Password:</label>
+                <input type='password' name='password' value=''>
+                <button type="submit" name="delete">Delete</button>
+            </form>
         </div>
-        <hr style="margin-bottom: 2em;">
-        <form action="index.php" method="GET">
-            <label for="url">URL:</label>
-            <input type='text' name='url' value="<?php echo $_GET['url']; ?>">
-            <label for="title">Title:</label>
-            <input type='text' name='title' value="<?php echo $_GET['title']; ?>">
-            <label for="password">Password:</label>
-            <input type='password' name='password' value=''>
-            <div class="text-center">
-                <button type="submit" name="add">Add</button>
-                <button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'>Back</button>
-            </div>
-        </form>
+        <?php
+        if (isset($_POST['delete']) && ($_POST['password'] == $password)) {
+            unlink('archive/' . $file);
+            unlink('archive/' . basename($file, ".html") . '.txt');
+            header('Location: index.php');
+        }
+        ?>
         <div class="text-center" style="margin-bottom: .5em;">
             <?php echo $footer; ?>
         </div>
+    </div>
+    <div class="text-center">
+
     </div>
 </body>
 
