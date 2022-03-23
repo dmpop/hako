@@ -35,7 +35,7 @@ if (!empty($_GET['title']) and $_GET['password'] == $password) {
     <div class="card">
         <div class="text-center" style="margin-top: 1em; margin-bottom: 1em;">
             <img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
-            <h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
+            <h1 style="display: inline; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
         </div>
         <hr style="margin-bottom: 2em;">
         <?php
@@ -45,7 +45,7 @@ if (!empty($_GET['title']) and $_GET['password'] == $password) {
             $title = $array[0];
             $url = $array[1];
             if (!empty($url)) {
-                echo "<p><a style='margin-right: 0.5em;' href='$filename' target='_blank'>" . $title . "</a> <strong><a style='margin-left: 0.5em; margin-right: 0.5em;' href='$url'><img style='vertical-align: middle;' src='svg/external-link.svg' height=14 alt='Open original link' title='Open original link' /></a></strong><a href='delete.php?file=" . basename($filename) . "'><img style='vertical-align: middle;' src='svg/delete.svg' height=14 alt='Delete archive' title='Delete archive' /></a></strong></p>";
+                echo "<p><a style='margin-right: 0.3em; vertical-align: middle;' href='$filename' target='_blank'>" . $title . "</a> <strong><a style='margin-left: 0.5em; margin-right: 0.5em;' href='$url'><img style='vertical-align: middle;' src='svg/external-link.svg' height=14 alt='Open original link' title='Open original link' /></a></strong><a href='delete.php?file=" . basename($filename) . "'><img style='vertical-align: middle;' src='svg/delete.svg' height=14 alt='Delete archive' title='Delete archive' /></a></strong></p>";
             } else {
                 echo "<p><a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a></p>";
             }

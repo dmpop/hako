@@ -22,7 +22,7 @@ $file = $_GET['file'];
     <div class="card">
         <div class="text-center" style="margin-top: 1em; margin-bottom: 1em;">
             <img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
-            <h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
+            <h1 style="display: inline; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
             <hr style="margin-bottom: 2em;">
             <form action=" " method="POST">
                 <label for="password">Password:</label>
@@ -42,7 +42,6 @@ $file = $_GET['file'];
         </div>
     </div>
     <div class="text-center">
-
     </div>
 </body>
 
