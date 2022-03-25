@@ -6,11 +6,11 @@ if (!file_exists('archive')) {
     mkdir('archive', 0755, true);
 }
 if (!empty($_GET['title']) and $_GET['password'] == $password) {
-    $filename = preg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_GET['title']);
-    $filename = preg_replace("([\.]{2,})", '', $filename);
-    $filename = str_replace(" ", "_", $filename);
-    shell_exec('./monolith ' . $_GET['url'] . ' --isolate --output archive/' . $filename . '.html');
-    $f = fopen("archive/" . $filename . ".txt", "a");
+    $file_name = preg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_GET['title']);
+    $file_name = preg_replace("([\.]{2,})", '', $file_name);
+    $file_name = str_replace(" ", "_", $file_name);
+    shell_exec('./monolith ' . $_GET['url'] . ' --isolate --output archive/' . $file_name . '.html');
+    $f = fopen("archive/" . $file_name . ".txt", "a");
     fwrite($f, $_GET['title'] . "\n");
     fwrite($f, $_GET['url'] . "\n");
     fclose($f);
@@ -39,15 +39,15 @@ if (!empty($_GET['title']) and $_GET['password'] == $password) {
         </div>
         <hr style="margin-bottom: 2em;">
         <?php
-        $fileList = glob('archive/*.html');
-        foreach ($fileList as $filename) {
-            $array = explode("\n", file_get_contents('archive/' . basename($filename, ".html") . '.txt', true));
+        $file_list = glob('archive/*.html');
+        foreach ($file_list as $file_name) {
+            $array = explode("\n", file_get_contents('archive/' . basename($file_name, ".html") . '.txt', true));
             $title = $array[0];
             $url = $array[1];
             if (!empty($url)) {
-                echo "<p><a style='margin-right: 0.3em; vertical-align: middle;' href='$filename' target='_blank'>" . $title . "</a> <strong><a style='margin-left: 0.5em; margin-right: 0.5em;' href='$url'><img style='vertical-align: middle;' src='svg/external-link.svg' height=14 alt='Open original link' title='Open original link' /></a></strong><a href='delete.php?file=" . basename($filename) . "'><img style='vertical-align: middle;' src='svg/delete.svg' height=14 alt='Delete archive' title='Delete archive' /></a></strong></p>";
+                echo "<p><a style='margin-right: 0.3em; vertical-align: middle;' href='$file_name' target='_blank'>" . $title . "</a> <strong><a style='margin-left: 0.5em; margin-right: 0.5em;' href='$url'><img style='vertical-align: middle;' src='svg/external-link.svg' height=14 alt='Open original link' title='Open original link' /></a></strong><a href='delete.php?file=" . basename($file_name) . "'><img style='vertical-align: middle;' src='svg/delete.svg' height=14 alt='Delete archive' title='Delete archive' /></a></strong></p>";
             } else {
-                echo "<p><a href='$filename'>" . basename(str_replace("_", " ", $filename), ".html") . "</a></p>";
+                echo "<p><a href='$file_name'>" . basename(str_replace("_", " ", $file_name), ".html") . "</a></p>";
             }
         }
         ?>
