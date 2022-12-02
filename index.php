@@ -37,6 +37,9 @@ if (!empty($_GET['title']) and $_GET['password'] == $password) {
             <img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
             <h1 style="display: inline; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
         </div>
+        <div class="text-center">
+            <button style="margin-bottom: 1em;" onclick="location.href='add.php'">Add</button>
+        </div>
         <hr style="margin-bottom: 2em;">
         <?php
         $file_list = glob('archive/*.html');
@@ -52,9 +55,6 @@ if (!empty($_GET['title']) and $_GET['password'] == $password) {
         }
         ?>
         <hr>
-        <div class="text-center">
-            <button style="margin-bottom: 1em;" onclick="location.href='add.php'">Add</button>
-        </div>
         <div class="text-center" style="margin-bottom: .5em;">
             <?php echo $footer; ?>
         </div>
