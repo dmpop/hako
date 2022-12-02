@@ -1,9 +1,0 @@
-html {
-    font-family: 'Karla', FreeSans, Helvetica, sans-serif;
-}
-
-@font-face {
-	font-family: 'Karla';
-	font-style: normal;
-	src: url('../font/Karla-Regular.woff2') format('woff2');
-}

@@ -16,7 +16,6 @@ $file = $_GET['file'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/classless.css" />
     <link rel="stylesheet" href="css/themes.css" />
-    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
