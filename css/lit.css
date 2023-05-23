@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box
+}
+
+*+* {
+    margin: .5em 0
+}
+
+pre {
+    overflow: auto
+}
+
+@media(min-width:35em) {
+    .col {
+        display: table-cell
+    }
+
+    .\31 {
+        width: 5%
+    }
+
+    .\33 {
+        width: 22%
+    }
+
+    .\34 {
+        width: 30%
+    }
+
+    .\35 {
+        width: 40%
+    }
+
+    .\32 {
+        width: 15%
+    }
+
+    .\36 {
+        width: 50%
+    }
+
+    .row {
+        display: table;
+        border-spacing: 1em 0
+    }
+}
+
+.row,
+.w-100 {
+    width: 100%
+}
+
+.card:focus,
+hr {
+    outline: 0;
+    border: solid #ce6a85
+}
+
+.card,
+pre {
+    padding: 1em;
+    border: solid #eee
+}
+
+.btn:hover,
+a:hover {
+    opacity: .6
+}
+
+.c {
+    max-width: 60em;
+    padding: 1em;
+    margin: auto;
+    font: 1em/1.6 Karla
+}
+
+h6 {
+    font: 100 1em Karla
+}
+
+h5 {
+    font: 100 1.2em Karla
+}
+
+h3 {
+    font: 100 2em Karla
+}
+
+h4 {
+    font: 100 1.5em Karla
+}
+
+h2 {
+    font: 100 2.2em Karla
+}
+
+h1 {
+    font: 100 2.5em Karla
+}
+
+a {
+    color: #ce6a85;
+    text-decoration: none
+}
+
+.btn.primary {
+    color: #fff;
+    background: #ce6a85;
+    border: solid #ce6a85
+}
+
+td,
+th {
+    padding: .3em;
+    text-align: left;
+}
+
+.btn {
+    padding: 1em;
+    text-transform: uppercase;
+    background: #fff;
+    border: solid;
+    font: 1em Karla
+}

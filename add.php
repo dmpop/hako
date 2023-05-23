@@ -5,7 +5,7 @@ include('config.php');
 
 <!DOCTYPE html>
 <html lang="en" data-theme="<?php echo $theme; ?>">
-<!-- Author: Dmitri Popov, dmpop@linux.com
+<!-- Author: Dmitri Popov, dmpop@cameracode.coffee
          License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 
 <head>
@@ -13,33 +13,36 @@ include('config.php');
     <meta charset="utf-8">
     <link rel="shortcut icon" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/classless.css" />
-    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/lit.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-    <div class="card">
-        <div class="text-center" style="margin-top: 1em; margin-bottom: 1em;">
-            <img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
-            <h1 style="display: inline; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
-        </div>
-        <hr style="margin-bottom: 2em;">
-        <form action="index.php" method="GET">
-            <label for="url">URL:</label>
-            <input type='text' name='url' value="<?php echo $_GET['url']; ?>">
-            <label for="title">Title:</label>
-            <input type='text' name='title' value="<?php echo $_GET['title']; ?>">
-            <label for="password">Password:</label>
-            <input type='password' name='password' value=''>
-            <div class="text-center">
-                <button type="submit" name="add">Add</button>
-                <button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'>Back</button>
+    <div class="c">
+        <div style="text-align: center;">
+            <div style="margin-top: 1em; margin-bottom: 1em;">
+                <img style="display: inline; height: 3em; vertical-align: middle; margin-right: 0.5em;" src="favicon.svg" alt="logo" />
+                <h1 style="display: inline; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
             </div>
-        </form>
-        <div class="text-center" style="margin-bottom: .5em;">
-            <?php echo $footer; ?>
         </div>
-    </div>
+        <div class="card w-100">
+            <form action="index.php" method="GET">
+                <label for="url">URL:</label>
+                <input class="card w-100" type='text' name='url' value="<?php echo $_GET['url']; ?>">
+                <label for="title">Title:</label>
+                <input class="card w-100" type='text' name='title' value="<?php echo $_GET['title']; ?>">
+                <label for="password">Password:</label>
+                <input class="card w-100" type='password' name='password' value=''>
+                <div style="text-align: center;">
+                    <button class="btn primary" type="submit" name="add">Add</button>
+                    <button class="btn" style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'>Back</button>
+                </div>
+            </form>
+        </div>
+        <div class="card w-100">
+            <div style="text-align: center;">
+                <?php echo $footer; ?>
+            </div>
 </body>
 
 </html>
