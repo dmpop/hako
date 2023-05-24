@@ -36,7 +36,7 @@ if (!empty($_GET['title']) and $_GET['password'] == $password) {
         <div style="text-align: center;">
             <div style="margin-top: 1em; margin-bottom: 1em;">
                 <img style="display: inline; height: 3em; vertical-align: middle; margin-right: 0.5em;" src="favicon.svg" alt="logo" />
-                <h1 style="display: inline; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
+                <h1><?php echo $title; ?></h1>
             </div>
         </div>
         <div class="card w-100">

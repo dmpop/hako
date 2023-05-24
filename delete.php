@@ -23,7 +23,7 @@ $file = $_GET['file'];
         <div style="text-align: center;">
             <div style="margin-top: 1em; margin-bottom: 1em;">
                 <img style="display: inline; height: 3em; vertical-align: middle; margin-right: 0.5em;" src="favicon.svg" alt="logo" />
-                <h1 style="display: inline; vertical-align: middle; letter-spacing: 3px; color: #e28aa7ff"><?php echo $title; ?></h1>
+                <h1><?php echo $title; ?></h1>
             </div>
         </div>
         <div class="card w-100">
@@ -32,20 +32,21 @@ $file = $_GET['file'];
                 <input class="card w-100" type='password' name='password' value=''>
                 <div style="text-align: center;">
                     <button class="btn primary" type="submit" name="delete">Delete</button>
-                </div>
             </form>
+            <a class="btn" style="margin-top: 1.5em; margin-bottom: 1.5em;" href="index.php">Back</a>
         </div>
-        <?php
-        if (isset($_POST['delete']) && ($_POST['password'] == $password)) {
-            unlink('archive/' . $file);
-            unlink('archive/' . basename($file, ".html") . '.txt');
-            header('Location: index.php');
-        }
-        ?>
-        <div class="card w-100">
-            <div style="text-align: center;">
-                <?php echo $footer; ?>
-            </div>
+    </div>
+    <?php
+    if (isset($_POST['delete']) && ($_POST['password'] == $password)) {
+        unlink('archive/' . $file);
+        unlink('archive/' . basename($file, ".html") . '.txt');
+        header('Location: index.php');
+    }
+    ?>
+    <div class="card w-100">
+        <div style="text-align: center;">
+            <?php echo $footer; ?>
+        </div>
 </body>
 
 </html>

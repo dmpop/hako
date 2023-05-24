@@ -53,7 +53,7 @@ pre {
 .card:focus,
 hr {
     outline: 0;
-    border: solid #ce6a85
+    border: solid #ff9955
 }
 
 .card,
@@ -95,18 +95,18 @@ h2 {
 }
 
 h1 {
-    font: 100 2.5em Karla
+    font: 100 2.5em Karla;
 }
 
 a {
-    color: #ce6a85;
+    color: #ff9955;
     text-decoration: none
 }
 
 .btn.primary {
     color: #fff;
-    background: #ce6a85;
-    border: solid #ce6a85
+    background: #ff9955;
+    border: solid #ff9955
 }
 
 td,
@@ -121,4 +121,11 @@ th {
     background: #fff;
     border: solid;
     font: 1em Karla
+}
+
+@font-face {
+    font-family: "Karla";
+    src: url('../fonts/Karla-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
