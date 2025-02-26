@@ -28,9 +28,9 @@ include('config.php');
         <div class="card w-100">
             <form action="index.php" method="GET">
                 <label for="url">URL:</label>
-                <input class="card w-100" type='text' name='url' value="<?php echo $_GET['url']; ?>">
+                <input class="card w-100" type='text' name='url' value="<?php echo htmlspecialchars($_GET['url'], ENT_QUOTES, 'UTF-8'); ?>">
                 <label for="title">Title:</label>
-                <input class="card w-100" type='text' name='title' value="<?php echo $_GET['title']; ?>">
+                <input class="card w-100" type='text' name='title' value="<?php echo htmlspecialchars($_GET['title'], ENT_QUOTES, 'UTF-8'); ?>">
                 <label for="password">Password:</label>
                 <input class="card w-100" type='password' name='password' value=''>
                 <div style="text-align: center;">
